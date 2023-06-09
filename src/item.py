@@ -37,19 +37,18 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
+        Item.all = []
         with open('C:\\Users\\User92\\PycharmProjects\\pythonProject\\electronics-shop-project\\src\\items.csv', newline='') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',')
             for row in reader:
-                #print(row['name'], row['price'], row['quantity'])
                 Item(row['name'], row['price'], row['quantity'])
 
-#Item.instantiate_from_csv()
-#print(Item.all)
+
 
     @staticmethod
     def string_to_number(string):
-
-        return int(string)
+        number = float(string)
+        return int(number)
 
 
 

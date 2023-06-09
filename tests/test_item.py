@@ -15,3 +15,11 @@ def test_item_calculate_total_price(smartphone):
 def test_item_apply_discount(smartphone):
     smartphone.apply_discount()
     assert smartphone.price == 10000
+
+def test_item_instantiate_from_csv():
+    Item.instantiate_from_csv()
+    assert len(Item.all) == 5
+
+def test_item_string_to_number():
+    assert Item.string_to_number('523') == 523
+
