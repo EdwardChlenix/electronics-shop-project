@@ -53,3 +53,8 @@ class Item:
 
     def __str__(self):
         return self.__name
+
+    def __add__(self, other):
+        if not isinstance(other, Item):
+            raise ValueError('Складывать можно только экземпляры "Phone" или "Item" классов')
+        return int(self.quantity) + int(other.quantity)
